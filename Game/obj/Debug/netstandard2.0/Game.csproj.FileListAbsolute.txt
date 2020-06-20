@@ -1,0 +1,9 @@
+D:\Coba\Project\DDD\RPS.NET\Game\bin\Debug\netstandard2.0\Game.deps.json
+D:\Coba\Project\DDD\RPS.NET\Game\bin\Debug\netstandard2.0\Game.dll
+D:\Coba\Project\DDD\RPS.NET\Game\bin\Debug\netstandard2.0\Game.pdb
+D:\Coba\Project\DDD\RPS.NET\Game\obj\Debug\netstandard2.0\Game.csprojAssemblyReference.cache
+D:\Coba\Project\DDD\RPS.NET\Game\obj\Debug\netstandard2.0\Game.csproj.CoreCompileInputs.cache
+D:\Coba\Project\DDD\RPS.NET\Game\obj\Debug\netstandard2.0\Game.AssemblyInfoInputs.cache
+D:\Coba\Project\DDD\RPS.NET\Game\obj\Debug\netstandard2.0\Game.AssemblyInfo.cs
+D:\Coba\Project\DDD\RPS.NET\Game\obj\Debug\netstandard2.0\Game.dll
+D:\Coba\Project\DDD\RPS.NET\Game\obj\Debug\netstandard2.0\Game.pdb

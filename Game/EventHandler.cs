@@ -5,10 +5,12 @@ namespace Game
     public abstract class RPSResultHandler : IObserver<GameResult>
     {
         protected IExpGainer _gainer;
+        protected IPlayerRepository _repository;
 
-        public RPSResultHandler(IExpGainer gainer)
+        public RPSResultHandler(IPlayerRepository repository, IExpGainer gainer)
         {
-            this._gainer = gainer;
+            _gainer = gainer;
+            _repository = repository;
         }
 
         public abstract void Update(GameResult e);
@@ -16,33 +18,35 @@ namespace Game
 
     public class WinHandler : RPSResultHandler
     {
-        public WinHandler(IExpGainer gainer) : base(gainer) { }
+        public WinHandler(IPlayerRepository repository, IExpGainer gainer) : base(repository, gainer) { }
 
         public override void Update(GameResult e)
         {
-            //Check repo first
+            if(_repository == null) return;
 
 
             Win evnt = e as Win;
             if(evnt == null) return;
 
-            //Find user, add user exp via repo
+            Player p = _repository.FindPlayerByID(e.Player);
+            _repository.AddExp(p, _gainer.Gain());
         }
     }
 
     public class LoseHandler : RPSResultHandler
     {
-        public LoseHandler(IExpGainer gainer) : base(gainer) { }
+        public LoseHandler(IPlayerRepository repository, IExpGainer gainer) : base(repository, gainer) { }
 
         public override void Update(GameResult e)
         {
-            //Check repo first
+            if(_repository == null) return;
 
             
             Lose evnt = e as Lose;
             if(evnt == null) return;
 
-            //Find user, add user exp via repo
+            Player p = _repository.FindPlayerByID(e.Player);
+            _repository.AddExp(p, _gainer.Gain());
         }
     }
 }
